@@ -1,10 +1,13 @@
 "use client";
+import { Suspense } from "react"; // Yoko：Suspenseをインポートを追加
 import OneCustomerInfoCard from "@/app/components/one_customer_info_card.jsx";
 import fetchCustomer from "./fetchCustomer";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function ConfirmPage() {
+// Yoko：Suspense 内で呼び出すコンポーネントを追加し、下記をコメントアウト
+//export default function ConfirmPage() {
+function ConfirmPageInner() {
   const router = useRouter();
   const customer_id = useSearchParams().get("customer_id");
   const [customer, setCustomer] = useState(null);
@@ -31,3 +34,13 @@ export default function ConfirmPage() {
     </>
   );
 }
+
+// ページエントリーポイントを分離
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConfirmPageInner />
+    </Suspense>
+  );
+}
+
