@@ -52,7 +52,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: release.zip
+          #上の1行を追加し、下の1行をコメントアウト##
+          #path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -70,7 +72,9 @@ jobs:
         with:
           app-name: 'tech0-gen-11-step3-2-node-42'
           slot-name: 'Production'
-          package: ./deploy
+          # #4の変更をさらに変更
+          ##package: ./deploy
+          package: release.zip 
           ## 上の1行は変更箇所#4 ##
           # package: .　##コメントアウト##
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F5ED1513856140C090C010BD13909F28 }}
