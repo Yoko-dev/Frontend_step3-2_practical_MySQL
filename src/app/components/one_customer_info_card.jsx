@@ -1,9 +1,21 @@
+/* 下記のexportをコメントアウト  
 export default function OneCustomerInfoCard({
   customer_id,
   customer_name,
   age,
   gender,
-}) {
+})
+*/
+
+/* 下記のexportを追加 */
+export default function OneCustomerInfoCard(props = {}) {
+	const {
+		customer_id = "",
+		customer_name = "",
+		age = "",
+		gender = "",
+	} = props;
+}{
   return (
     <>
       <div className="m-4 card bordered bg-blue-200 duration-200 hover:border-r-red">
