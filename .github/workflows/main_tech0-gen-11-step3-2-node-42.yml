@@ -12,8 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: read #This is required for actions/checkout
+    permissions:
+      contents: read #This is required for actions/checkout
 
     steps:
       - uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
       ##　以下を追加#3　ここから##
       - name: Zip artifact for deployment
         run: zip release.zip ./deploy -r
-      ##　以上を追加#3　ここまで##
+        ##　以上を追加#3　ここまで##
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
