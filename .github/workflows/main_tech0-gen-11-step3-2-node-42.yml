@@ -37,10 +37,13 @@ jobs:
       ##　以下を追加#2　ここから##
       - name: Copy artifact for deployment jobs
         run: |
-          mkdir deploy
-          cp -r ./.next/standalone/. ./deploy
+          mkdir -p deploy
+          cp -r ./.next/standalone/. ./deploy/
+          mkdir -p ./deploy/.next
           cp -r ./.next/static ./deploy/.next/static
-          cp package.json ./deploy
+          if [ -d public ]; then
+            cp -r public/. ./deploy/public/
+          fi
 
       ##　以上を追加#2　ここまで。ただし、下１行は独自に追加、上から2行目も修正##
 
