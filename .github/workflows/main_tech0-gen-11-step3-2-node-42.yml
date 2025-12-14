@@ -39,7 +39,9 @@ jobs:
           cp -r ./.next/static/. ./deploy/.next/static
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./deploy -r
+        run: |
+          cd deploy          # ← deployの中に入る
+          zip -r ../release.zip .  # ← 中身だけをzip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -66,12 +68,8 @@ jobs:
         with:
           name: node-app
 
-      - name: Unzip artifact for deployment
-        run: |
-          cd deploy
-          zip -r ../release.zip .
-        #上2行を追加
-        #run: unzip release.zip
+      ##- name: Unzip artifact for deployment
+      ##  run: unzip release.zip
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
