@@ -51,8 +51,8 @@ jobs:
       - name: List deploy folder contents
         run: |
           echo "=== deploy folder contents ==="
-          ls -R ./deploy
-          
+          ls -R ./deploy/.next
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
