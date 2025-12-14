@@ -41,9 +41,8 @@ jobs:
           cp -r ./.next/standalone/. ./deploy
           cp -r ./.next/static/. ./deploy/.next/static
           cp package.json ./deploy
-          cp -r node_modules ./deploy/node_modules
 
-      ##　以上を追加#2　ここまで。ただし、下2行は独自に追加##
+      ##　以上を追加#2　ここまで。ただし、下１行は独自に追加##
 
       ##　以下を追加#3　ここから##
       - name: Zip artifact for deployment
