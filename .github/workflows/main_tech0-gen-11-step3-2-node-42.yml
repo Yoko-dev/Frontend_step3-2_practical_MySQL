@@ -39,10 +39,10 @@ jobs:
         run: |
           mkdir deploy
           cp -r ./.next/standalone/. ./deploy
-          cp -r ./.next/static/. ./deploy/.next/static
+          cp -r ./.next/static ./deploy/.next/static
           cp package.json ./deploy
 
-      ##　以上を追加#2　ここまで。ただし、下１行は独自に追加##
+      ##　以上を追加#2　ここまで。ただし、下１行は独自に追加、上から2行目も修正##
 
       ##　以下を追加#3　ここから##
       - name: Zip artifact for deployment
