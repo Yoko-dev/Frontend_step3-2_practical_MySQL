@@ -7,7 +7,7 @@ const nextConfig = {
         /*　下記のエンドポイントをコメントアウト
         API_ENDPOINT: process.env.API_ENDPOINT,
         下記のエンドポイントを追加 */
-        EXT_PUBLIC_API_ENDPOINT: process.env.NEXT_PUBLIC_API_ENDPOINT,
+        NEXT_PUBLIC_API_ENDPOINT: process.env.NEXT_PUBLIC_API_ENDPOINT,
       },
 }
 
