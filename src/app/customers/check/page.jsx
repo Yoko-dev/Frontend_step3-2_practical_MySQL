@@ -9,9 +9,14 @@ async function fetchCustomer(id) {
   }
   return res.json();
 }
-
+/* Yoko "query"を"searchParams"に編集
+下記の通り修正
 export default async function ReadPage({ query }) {
   const { id } = query;
+ここまで↑
+下の2行を追加 */
+export default async function ReadPage({ searchParams }) {
+  const { id } = searchParams;
   const customerInfo = await fetchCustomer(id);
 
   return (
