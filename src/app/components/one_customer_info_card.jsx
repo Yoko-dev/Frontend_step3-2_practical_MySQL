@@ -5,6 +5,7 @@ export default function OneCustomerInfoCard({
   age,
   gender,
 })
+}{
 */
 
 /* 下記のexportを追加 */
@@ -15,7 +16,6 @@ export default function OneCustomerInfoCard(props = {}) {
 		age = "",
 		gender = "",
 	} = props;
-}{
   return (
     <>
       <div className="m-4 card bordered bg-blue-200 duration-200 hover:border-r-red">
